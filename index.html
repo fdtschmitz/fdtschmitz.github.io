@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador Automático de Títulos da Eice</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+	<div class="jumbotron text-center bg-light text-dark">
+		<h2>Gerador de Títulos da Eice</h2>
+		<div class="form-floating mb-3">
+			<h1 class="display-6" id="randomText"></h1>
+		</div>
+		<br>
+		<button type="button" class="btn btn-primary" onclick="generateRandomText()">Gerar Título</button>
+	</div>
+
+	<script>
+        // Define an array of random text options
+        var randomA = [
+            "Santa",
+            "Rainha",
+            "Embaixadora",
+            "Agente",
+            "Terror",
+            "Princesa",
+			"Imperatriz",
+			"Duquesa",
+			"Marquesa",
+			"Viscondessa",
+			"Monja",
+			"Primeira dama",
+			"Grandeza",
+			"Condessa",
+			"Baronesa",
+			"Lady",
+			"Dama"
+        ];
+		var randomB = [
+            " da Discórdia",
+            " do Caos",
+            " da Divisão",
+            " das Fadas",
+            " da Descomplica",
+			" dos Perdidos",
+			" dos Desavisados",
+			" dos Desviados",
+			" dos Caídos",
+			" dos Feridos",
+			" dos Indigentes",
+			" dos Carentes",
+			" dos Famintos",
+			" dos Infelizes",
+			" dos Ansiosos",
+			" dos Desejosos",
+			" dos Aflitos",
+			" do Berro",
+			" da Sapatada",
+			" do Murro",
+			" do Jab",
+			" do Lacre"
+        ];
+
+        function generateRandomText() {
+            // Get a random index from the array
+            var randomIndexA = Math.floor(Math.random() * randomA.length);
+			var randomIndexB = Math.floor(Math.random() * randomB.length);
+            // Display the random text in the label
+			var newLabel = randomA[randomIndexA] + randomB[randomIndexB];
+            document.getElementById("randomText").textContent = newLabel;
+        }
+    </script>
+</body>
+</html>
