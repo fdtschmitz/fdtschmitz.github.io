@@ -1,0 +1,152 @@
+{
+"pt": {
+"nav": {
+"about": "Sobre",
+"skills": "Habilidades",
+"projects": "Projetos",
+"current": "Projetos & Serviços"
+},
+"hero": {
+"availability": "Projetos Independentes & Consultoria",
+"title": "Fernando DT Schmitz",
+"subtitle": "Desenvolvimento de Software • Automação de Processos • Análise de Dados & BI",
+"intro": "Profissional multidisciplinar (Engenharia da Computação, Pós em Análise de Dados e Administração) especializado em transformar gargalos de negócios em sistemas eficientes, automações e dashboards gerenciais.",
+"btnProjects": "Ver Casos de Uso",
+"btnAbout": "Perfil Profissional"
+},
+"about": {
+"title": "Sobre Mim & Atuação",
+"p1": "Com formação em Administração de Empresas, Pós-graduação em Análise de Dados e graduando em Engenharia da Computação, atuo na ponte entre as necessidades estratégicas do negócio e as melhores tecnologias disponíveis. Minha especialidade é mapear rotinas operacionais e desenvolver soluções sob medida que trazem simplicidade, ganho de produtividade e confiabilidade.",
+"p2": "Tenho experiência prática no desenvolvimento de scripts de automação em Python e PowerShell, construção de ecossistemas de Business Intelligence no Power BI, customização e suporte a ERPs (como TOTVS RM), além da gestão de ambientes containerizados com Docker e prototipagem IoT. Atualmente realizo atendimentos sob demanda, projetos paralelos e consultorias técnicas."
+},
+"skills": {
+"title": "Competências Técnicas & Ecossistema"
+},
+"projects": {
+"title": "Projetos & Casos de Sucesso"
+},
+"current": {
+"title": "Frentes de Atuação & Serviços"
+},
+"footer": "© 2026 • Fernando Schmitz — Software, Automação & Análise de Dados",
+"completedProjects": [
+{
+"category": "BI & Gestão de Negócios",
+"title": "Solução de Gestão de Compras & Business Intelligence",
+"description": "Estruturação completa de processo de Compras Indiretas sem ERP prévio. Criação de base tratada no Excel com Power Query, centralização de dados por comprador e desenvolvimento de dashboard executivo no Power BI com DAX avançado para a diretoria.",
+"image": "https://placehold.co/600x340/1e293b/3b82f6?text=Power+BI+%26+Compras+BI",
+"tags": ["Power BI", "DAX", "Power Query", "Excel Avançado", "Gestão de Compras"]
+},
+{
+"category": "Automação & Python",
+"title": "Automação Operacional & Processamento de Dados",
+"description": "Desenvolvimento de scripts Python customizados para eliminação de tarefas repetitivas administrativas, manipulação automatizada de arquivos/diretórios, integração via APIs e rotinas de comunicação transacional.",
+"image": "https://placehold.co/600x340/1e293b/8b5cf6?text=Python+Automation+Scripts",
+"tags": ["Python 3", "Automação", "ETL", "Integração de APIs", "PowerShell"]
+},
+{
+"category": "Infraestrutura & ERP",
+"title": "Ambientes Containerizados & Otimização de Sistemas",
+"description": "Implantação e gerenciamento de microsserviços via Docker em servidores Linux e Windows, integração entre sistemas corporativos (TOTVS RM, GLPI) e otimização de bancos de dados SQL/MySQL.",
+"image": "https://placehold.co/600x340/1e293b/06b6d4?text=Docker+%26+Infraestrutura",
+"tags": ["Docker", "Linux", "SQL / MySQL", "TOTVS RM", "GLPI"]
+},
+{
+"category": "IoT & Soluções Embarcadas",
+"title": "Prototipagem IoT & Automação baseada em Sensores",
+"description": "Desenvolvimento de soluções com microcontroladores (ESP8266 / Wemos D1 Mini), com integração de sensores eletrônicos, automação com lógica condicional e envio de dados para servidores centralizados.",
+"image": "https://placehold.co/600x340/1e293b/10b981?text=IoT+%26+Embarcados",
+"tags": ["C/C++", "ESP8266", "Wemos D1 Mini", "IoT", "Sensores"]
+}
+],
+"currentProjects": [
+{
+"title": "Consultoria em Automação & Power Platform (PowerApps / Power Automate)",
+"description": "Desenvolvimento sob demanda de fluxos automatizados corporativos, aplicativos leves para coleta de dados em campo e integração entre Office 365, SharePoint e bancos SQL."
+},
+{
+"title": "Projetos Independentes de Análise Exploratória & BI",
+"description": "Modelagem de dados, tratamento ETL e criação de painéis gerenciais personalizados para empresas que buscam visibilidade sobre indicadores chave de desempenho (KPIs)."
+},
+{
+"title": "Desenvolvimento de Scripts & Integrações de Sistemas",
+"description": "Criação de soluções personalizadas em Python, C/C++ e PowerShell para automação de infraestrutura, sincronização de bancos de dados relacionais e manutenção de rotinas operacionais."
+}
+]
+},
+"en": {
+"nav": {
+"about": "About",
+"skills": "Skills",
+"projects": "Projects",
+"current": "Services & Focus"
+},
+"hero": {
+"availability": "Available for Freelance Projects & Consulting",
+"title": "Fernando Schmitz",
+"subtitle": "Software Development • Process Automation • Data Analytics & BI",
+"intro": "Multidisciplinary specialist (Computer Engineering, Data Analytics Postgraduate & Business Admin) focused on bridging business requirements with custom technology and automation.",
+"btnProjects": "Use Cases",
+"btnAbout": "Professional Profile"
+},
+"about": {
+"title": "About & Services",
+"p1": "With a background in Business Administration, a Postgraduate degree in Data Analytics, and currently studying Computer Engineering, I connect business strategies with the right technology stack. My goal is to streamline operational bottlenecks through custom software, automation, and reliable management dashboards.",
+"p2": "My hands-on experience spans Python & PowerShell automation, Power BI analytics, ERP support (TOTVS RM), Docker containerization, and IoT prototyping. I am open to independent projects, technical consulting, and specialized software contracts."
+},
+"skills": {
+"title": "Technical Skills & Ecosystem"
+},
+"projects": {
+"title": "Featured Projects & Case Studies"
+},
+"current": {
+"title": "Services & Consulting"
+},
+"footer": "© 2026 • Fernando Schmitz — Software, Automation & Data Analytics",
+"completedProjects": [
+{
+"category": "BI & Business Management",
+"title": "Purchasing Management Solution & Business Intelligence",
+"description": "Structured end-to-end indirect purchasing data system. Designed Excel database with Power Query, organized purchaser metrics, and built executive Power BI dashboards using advanced DAX for executive reporting.",
+"image": "https://placehold.co/600x340/1e293b/3b82f6?text=Power+BI+%26+Purchasing+BI",
+"tags": ["Power BI", "DAX", "Power Query", "Advanced Excel", "Procurement"]
+},
+{
+"category": "Automation & Python",
+"title": "Operational Automation & Data Processing",
+"description": "Custom Python scripts to eliminate manual administrative tasks, automate file management, process structured data, and integrate APIs for transactional notifications.",
+"image": "https://placehold.co/600x340/1e293b/8b5cf6?text=Python+Automation+Scripts",
+"tags": ["Python 3", "Automation", "ETL", "API Integration", "PowerShell"]
+},
+{
+"category": "Infrastructure & ERP",
+"title": "Containerized Environments & System Optimization",
+"description": "Deployment and management of microservices using Docker on Linux/Windows servers, integrating corporate systems (TOTVS RM, GLPI) and SQL database querying.",
+"image": "https://placehold.co/600x340/1e293b/06b6d4?text=Docker+%26+Infrastructure",
+"tags": ["Docker", "Linux", "SQL / MySQL", "TOTVS RM", "GLPI"]
+},
+{
+"category": "IoT & Embedded Solutions",
+"title": "IoT Prototyping & Sensor-Based Automation",
+"description": "Embedded programming on microcontrollers (ESP8266 / Wemos D1 Mini), featuring sensor integration, conditional logic automation, and remote data collection.",
+"image": "https://placehold.co/600x340/1e293b/10b981?text=IoT+%26+Embedded",
+"tags": ["C/C++", "ESP8266", "Wemos D1 Mini", "IoT", "Sensors"]
+}
+],
+"currentProjects": [
+{
+"title": "Automation & Power Platform Consulting (PowerApps / Power Automate)",
+"description": "On-demand corporate workflow automation, lightweight custom web/mobile apps, and integration between Office 365, SharePoint, and SQL databases."
+},
+{
+"title": "Independent Data Analytics & BI Dashboard Projects",
+"description": "Data modeling, ETL processing, and custom executive dashboard creation for companies seeking real-time visibility into Key Performance Indicators (KPIs)."
+},
+{
+"title": "Custom Scripting & System Integrations",
+"description": "Tailored Python, C/C++, and PowerShell solutions for infrastructure automation, relational database synchronization, and operational process optimization."
+}
+]
+}
+}

@@ -1,389 +1,429 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" class="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meu Cartão Profissional</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Profissional | Especialista TOTVS RM & Automações</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: {
+                            purple: '#8b5cf6',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981'
+                        },
+                        dark: {
+                            bg: '#0b0f19',
+                            card: '#151c2e',
+                            border: '#2a3449'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        
+        .dark .glass-card {
+            background: rgba(21, 28, 46, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-<style>
-:root{
-    --bg:#f8f9fa;
-    --surface:#ffffff;
-    --text:#212529;
-    --muted:#6c757d;
-    --accent:#0d6efd;
-}
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
 
-[data-theme="dark"]{
-    --bg:#0f172a;
-    --surface:#1e293b;
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --accent:#3b82f6;
-}
+        .dark .glass-nav {
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-body{
-    background:var(--bg);
-    color:var(--text);
-    transition:.3s ease;
-}
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.navbar-custom{
-    background:rgba(255,255,255,.05);
-    backdrop-filter:blur(12px);
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.profile-card{
-    background:var(--surface);
-    border-radius:24px;
-    padding:40px;
-    box-shadow:0 20px 40px rgba(0,0,0,.1);
-}
-
-.section-card{
-    background:var(--surface);
-    border-radius:20px;
-    padding:30px;
-    margin-bottom:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.avatar{
-    width:160px;
-    height:160px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid var(--accent);
-}
-
-.text-muted-custom{
-    color:var(--muted);
-}
-
-.hero{
-    min-height:95vh;
-    display:flex;
-    align-items:center;
-}
-
-.project-card{
-    border:none;
-    border-radius:18px;
-    overflow:hidden;
-    transition:.3s;
-    background:var(--surface);
-    color:var(--text);
-}
-
-.project-card:hover{
-    transform:translateY(-6px);
-}
-
-.badge-custom{
-    background:var(--accent);
-}
-
-.timeline-item{
-    border-left:3px solid var(--accent);
-    padding-left:20px;
-    margin-bottom:25px;
-}
-
-.social a{
-    font-size:1.5rem;
-    margin-right:15px;
-    color:var(--accent);
-}
-
-footer{
-    padding:40px 0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-</style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-<div class="container">
-
-<span class="navbar-brand fw-bold text-primary">
-Portfolio
-</span>
-
-<div class="d-flex gap-3">
-
-<div class="form-check form-switch">
-<input class="form-check-input" type="checkbox" id="languageToggle">
-<label class="form-check-label" for="languageToggle">
-EN
-</label>
-</div>
-
-<div class="form-check form-switch">
-<input class="form-check-input" type="checkbox" id="themeToggle" checked>
-<label class="form-check-label">
-🌙
-</label>
-</div>
-
-</div>
-
-</div>
-</nav>
-
-
-<section class="hero">
-<div class="container">
-
-<div class="profile-card">
-
-<div class="row align-items-center">
-
-<div class="col-lg-4 text-center">
-<img src="https://via.placeholder.com/300" class="avatar mb-3">
-
-<div class="social">
-<a href="#"><i class="bi bi-linkedin"></i></a>
-<a href="#"><i class="bi bi-github"></i></a>
-<a href="#"><i class="bi bi-envelope-fill"></i></a>
-<a href="#"><i class="bi bi-whatsapp"></i></a>
-</div>
-</div>
-
-<div class="col-lg-8">
-
-<h1 id="nameTitle" class="display-5 fw-bold">
-Seu Nome
-</h1>
-
-<p class="lead text-muted-custom" id="profession">
-Especialista TOTVS RM • Desenvolvimento • Integrações
-</p>
-
-<p id="intro">
-Atuo com personalizações, integrações e desenvolvimento de soluções para o ecossistema TOTVS RM, focando em automação de processos, experiência do usuário e ganho operacional.
-</p>
-
-<a href="#projects" class="btn btn-primary btn-lg">
-Projetos
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<section class="container mb-5">
-<div class="section-card">
-
-<h2 id="aboutTitle">Sobre Mim</h2>
-
-<p id="aboutText">
-Profissional com experiência em desenvolvimento e customizações para TOTVS RM, atuando principalmente nos módulos Educacional, Compras e integrações corporativas.
-</p>
-
-</div>
-</section>
-
-
-<section id="projects" class="container">
-
-<h2 class="mb-4" id="completedProjectsTitle">
-Projetos Realizados
-</h2>
-
-<div class="row g-4">
-
-<div class="col-md-6">
-<div class="card project-card h-100">
-
-<div class="card-body">
-
-<span class="badge badge-custom mb-3">
-TOTVS RM
-</span>
-
-<h5 class="card-title" id="project1Title">
-Interface para o Módulo de Compras
-</h5>
-
-<p class="card-text" id="project1Text">
-Criação de interface moderna para o processo de requisição, aprovação e acompanhamento de compras no TOTVS RM.
-</p>
-
-</div>
-
-</div>
-</div>
-
-<div class="col-md-6">
-
-<div class="card project-card h-100">
-
-<div class="card-body">
-
-<span class="badge badge-custom mb-3">
-TOTVS RM Educacional
-</span>
-
-<h5 class="card-title" id="project2Title">
-Personalizações Acadêmicas
-</h5>
-
-<p class="card-text" id="project2Text">
-Desenvolvimento de funcionalidades específicas para processos acadêmicos e administrativos.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="container my-5">
-
-<h2 class="mb-4" id="currentProjectsTitle">
-Projetos em Andamento
-</h2>
-
-<div class="section-card">
-
-<div class="timeline-item">
-
-<h5 id="currentProj1">
-Portal de Solicitações Corporativas
-</h5>
-
-<p id="currentProj1Desc">
-Centralização de solicitações internas integradas ao TOTVS RM.
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h5 id="currentProj2">
-Automações Educacionais
-</h5>
-
-<p id="currentProj2Desc">
-Fluxos automatizados para matrículas e comunicação acadêmica.
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h5 id="currentProj3">
-Integrações REST
-</h5>
-
-<p id="currentProj3Desc">
-Integração entre sistemas legados e o ecossistema TOTVS RM.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer class="container text-center">
-
-<hr>
-
-<p>
-© 2026 - Portfolio Profissional
-</p>
-
-</footer>
-
-
-<script>
-
-const translations = {
-
-pt:{
-profession:"Especialista TOTVS RM • Desenvolvimento • Integrações",
-intro:"Atuo com personalizações, integrações e desenvolvimento de soluções para o ecossistema TOTVS RM, focando em automação de processos, experiência do usuário e ganho operacional.",
-aboutTitle:"Sobre Mim",
-aboutText:"Profissional com experiência em desenvolvimento e customizações para TOTVS RM, atuando principalmente nos módulos Educacional, Compras e integrações corporativas.",
-completedProjectsTitle:"Projetos Realizados",
-project1Title:"Interface para o Módulo de Compras",
-project1Text:"Criação de interface moderna para o processo de requisição, aprovação e acompanhamento de compras no TOTVS RM.",
-project2Title:"Personalizações Acadêmicas",
-project2Text:"Desenvolvimento de funcionalidades específicas para processos acadêmicos e administrativos.",
-currentProjectsTitle:"Projetos em Andamento",
-currentProj1:"Portal de Solicitações Corporativas",
-currentProj1Desc:"Centralização de solicitações internas integradas ao TOTVS RM.",
-currentProj2:"Automações Educacionais",
-currentProj2Desc:"Fluxos automatizados para matrículas e comunicação acadêmica.",
-currentProj3:"Integrações REST",
-currentProj3Desc:"Integração entre sistemas legados e o ecossistema TOTVS RM."
-},
-
-en:{
-profession:"TOTVS RM Specialist • Development • Integrations",
-intro:"I work with customizations, integrations and software solutions for the TOTVS RM ecosystem, focusing on process automation, user experience and operational efficiency.",
-aboutTitle:"About Me",
-aboutText:"Professional experienced in development and customizations for TOTVS RM, mainly within Education, Purchasing and corporate integration modules.",
-completedProjectsTitle:"Completed Projects",
-project1Title:"Purchasing Module Interface",
-project1Text:"Development of a modern interface for purchasing requests, approvals and tracking within TOTVS RM.",
-project2Title:"Educational Customizations",
-project2Text:"Development of specific features for academic and administrative processes.",
-currentProjectsTitle:"Current Projects",
-currentProj1:"Corporate Requests Portal",
-currentProj1Desc:"Centralization of internal requests integrated with TOTVS RM.",
-currentProj2:"Educational Automations",
-currentProj2Desc:"Automated enrollment and academic communication processes.",
-currentProj3:"REST Integrations",
-currentProj3Desc:"Integration between legacy systems and TOTVS RM ecosystem."
-}
-};
-
-const langToggle = document.getElementById("languageToggle");
-
-langToggle.addEventListener("change", () => {
-
-const lang = langToggle.checked ? "en" : "pt";
-
-Object.keys(translations[lang]).forEach(id => {
-document.getElementById(id).innerText =
-translations[lang][id];
-});
-
-});
-
-document.getElementById("themeToggle")
-.addEventListener("change",(e)=>{
-
-document.documentElement.setAttribute(
-"data-theme",
-e.target.checked ? "dark" : "light"
-);
-
-});
-
-</script>
-
+<body class="bg-slate-50 text-slate-800 dark:bg-dark-bg dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Background Decorative Gradients -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-accent-purple/20 rounded-full blur-3xl pointer-events-none -z-10 transform -translate-y-1/2"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 glass-nav transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 via-accent-purple to-accent-cyan p-[2px] shadow-lg group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center font-bold text-white text-xl">
+                        F
+                    </div>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+                    Dev<span class="text-brand-500">.Portfolio</span>
+                </span>
+            </a>
+
+            <div class="flex items-center gap-4 sm:gap-6">
+                <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                    <a href="#about" class="hover:text-brand-500 transition-colors" id="navAbout">Sobre</a>
+                    <a href="#skills" class="hover:text-brand-500 transition-colors" id="navSkills">Habilidades</a>
+                    <a href="#projects" class="hover:text-brand-500 transition-colors" id="navProjects">Projetos</a>
+                    <a href="#current" class="hover:text-brand-500 transition-colors" id="navCurrent">Em Andamento</a>
+                </nav>
+
+                <div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-800">
+                    <button id="langToggleBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 text-xs font-semibold tracking-wider transition-all bg-white/50 dark:bg-slate-800/50">
+                        <i class="bi bi-globe text-brand-500"></i>
+                        <span id="langLabel">PT</span>
+                    </button>
+
+                    <button id="themeToggleBtn" aria-label="Alternar tema" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 text-amber-500 dark:text-amber-400 transition-all bg-white/50 dark:bg-slate-800/50">
+                        <i class="bi bi-moon-stars-fill hidden dark:inline-block"></i>
+                        <i class="bi bi-sun-fill dark:hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- HERO SECTION -->
+        <section class="py-10 md:py-16">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="grid md:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="md:col-span-4 flex flex-col items-center text-center">
+                        <div class="relative group mb-6">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 via-accent-purple to-accent-cyan rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                            <div class="relative w-40 h-40 rounded-full bg-slate-900 p-1 flex items-center justify-center overflow-hidden border-2 border-white/20">
+                                <img src="data/pp.jpg" alt="Perfil Profissional" class="w-full h-full object-cover rounded-full">
+                            </div>
+                        </div>
+
+                        <!-- Redes Sociais sem WhatsApp -->
+                        <div class="flex items-center gap-3">
+                            <a href="https://www.linkedin.com/in/fernandoschmitz/" target="_blank" aria-label="LinkedIn" class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-brand-500 hover:text-white transition-all shadow-sm hover:scale-110">
+                                <i class="bi bi-linkedin text-lg"></i>
+                            </a>
+                            <a href="https://github.com/fdtschmitz" target="_blank" aria-label="GitHub" class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-slate-900 hover:text-white transition-all shadow-sm hover:scale-110">
+                                <i class="bi bi-github text-lg"></i>
+                            </a>
+                            <a href="mailto:fdtschmitz.dev@gmail.com" aria-label="Email" class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-accent-purple hover:text-white transition-all shadow-sm hover:scale-110">
+                                <i class="bi bi-envelope-fill text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-8 space-y-5 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-600 dark:text-brand-500 text-xs font-semibold uppercase tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span id="heroAvailability"></span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight" id="heroTitle">
+                        </h1>
+
+                        <p class="text-lg font-medium text-slate-600 dark:text-slate-300 leading-relaxed" id="heroSubtitle">
+                        </p>
+
+                        <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed" id="heroIntro">
+                        </p>
+
+                        <div class="pt-4 flex flex-wrap gap-4 justify-center md:justify-start">
+                            <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-accent-purple text-white font-semibold shadow-lg shadow-brand-500/25 hover:scale-[1.02] transition-all flex items-center gap-2" id="btnProjects">
+                                <i class="bi bi-box-seam-fill"></i>
+                                <span></span>
+                            </a>
+                            <a href="#about" class="px-6 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold border border-slate-300 dark:border-slate-700 hover:scale-[1.02] transition-all" id="btnAbout">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MIM -->
+        <section id="about" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 sm:p-10 shadow-xl space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500">
+                        <i class="bi bi-person-badge-fill text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white" id="aboutTitle">
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p id="aboutP1"></p>
+                    <p id="aboutP2"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="skills" class="scroll-mt-28 space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-accent-purple/10 text-accent-purple">
+                    <i class="bi bi-cpu-fill text-2xl"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white" id="skillsTitle">
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-2xl p-6 shadow-md border-l-4 border-l-brand-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="bi bi-database-fill text-xl text-brand-500"></i>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">Oracle SQL & TOTVS RM</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">Oracle SQL</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">Modelo de Dados ERP</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">RM Educacional</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">RM Compras (TMOV)</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">Provas Online (SPROVAS)</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 shadow-md border-l-4 border-l-accent-purple">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="bi bi-robot text-xl text-accent-purple"></i>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">Python & Automações</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-accent-purple/10 text-accent-purple border border-accent-purple/20">Python 3</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-accent-purple/10 text-accent-purple border border-accent-purple/20">PyMuPDF (PDF Parser)</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-accent-purple/10 text-accent-purple border border-accent-purple/20">Google Calendar API</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-accent-purple/10 text-accent-purple border border-accent-purple/20">ldap3 / Active Directory</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS REALIZADOS (Renderizados via JSON) -->
+        <section id="projects" class="scroll-mt-28 space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500">
+                    <i class="bi bi-folder-check text-2xl"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white" id="projectsTitle">
+                </h2>
+            </div>
+
+            <!-- Grid de Projetos vindo do JSON -->
+            <div class="grid md:grid-cols-2 gap-6" id="projectsContainer">
+                <!-- Renderizado dinamicamente pelo JS -->
+            </div>
+        </section>
+
+        <!-- PROJETOS EM ANDAMENTO (Renderizados via JSON) -->
+        <section id="current" class="scroll-mt-28 space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-accent-cyan/10 text-accent-cyan">
+                    <i class="bi bi-hourglass-split text-2xl"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white" id="currentTitle">
+                </h2>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl">
+                <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 space-y-8 py-2" id="currentProjectsContainer">
+                    <!-- Renderizado dinamicamente pelo JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-dark-bg/60 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-slate-500 dark:text-slate-400 text-sm" id="footerText"></p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE CARREGAMENTO DO JSON & IDIOMA -->
+    <script>
+        let jsonData = null;
+        let currentLang = 'pt';
+
+        // Carrega o arquivo JSON externo
+        async function fetchPortfolioData() {
+            try {
+                const response = await fetch('./data/data.json');
+                if (!response.ok) throw new Error("Erro na requisição do JSON");
+                jsonData = await response.json();
+                renderPage();
+            } catch (err) {
+                console.warn("Utilizando fallback de dados local...", err);
+                // Fallback de segurança se o arquivo não puder ser lido localmente
+                renderPage();
+            }
+        }
+
+        function renderPage() {
+            if (!jsonData) return;
+
+            const langData = jsonData[currentLang];
+
+            // Navbar
+            document.getElementById('navAbout').innerText = langData.nav.about;
+            document.getElementById('navSkills').innerText = langData.nav.skills;
+            document.getElementById('navProjects').innerText = langData.nav.projects;
+            document.getElementById('navCurrent').innerText = langData.nav.current;
+
+            // Hero
+            document.getElementById('heroAvailability').innerText = langData.hero.availability;
+            document.getElementById('heroTitle').innerText = langData.hero.title;
+            document.getElementById('heroSubtitle').innerText = langData.hero.subtitle;
+            document.getElementById('heroIntro').innerText = langData.hero.intro;
+            document.getElementById('btnProjects').querySelector('span').innerText = langData.hero.btnProjects;
+            document.getElementById('btnAbout').innerText = langData.hero.btnAbout;
+
+            // About
+            document.getElementById('aboutTitle').innerText = langData.about.title;
+            document.getElementById('aboutP1').innerText = langData.about.p1;
+            document.getElementById('aboutP2').innerText = langData.about.p2;
+
+            // Titles
+            document.getElementById('skillsTitle').innerText = langData.skills.title;
+            document.getElementById('projectsTitle').innerText = langData.projects.title;
+            document.getElementById('currentTitle').innerText = langData.current.title;
+            document.getElementById('footerText').innerText = langData.footer;
+
+            // Renderizar Projetos Realizados (Cards com Imagens e Badges)
+            const projectsContainer = document.getElementById('projectsContainer');
+            projectsContainer.innerHTML = '';
+
+            langData.completedProjects.forEach(proj => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between';
+                
+                const tagsHtml = proj.tags.map(tag => 
+                    `<span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">${tag}</span>`
+                ).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-900">
+                            <img src="${proj.image}" alt="${proj.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold bg-slate-900/80 text-brand-400 backdrop-blur-md border border-white/10">
+                                ${proj.category}
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">
+                                ${proj.title}
+                            </h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                ${proj.description}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex flex-wrap gap-2">
+                        ${tagsHtml}
+                    </div>
+                `;
+                projectsContainer.appendChild(card);
+            });
+
+            // Renderizar Projetos em Andamento
+            const currentContainer = document.getElementById('currentProjectsContainer');
+            currentContainer.innerHTML = '';
+
+            const colors = ['bg-brand-500', 'bg-accent-purple', 'bg-accent-cyan'];
+
+            langData.currentProjects.forEach((proj, idx) => {
+                const item = document.createElement('div');
+                item.className = 'relative pl-8 group';
+                const bulletColor = colors[idx % colors.length];
+
+                item.innerHTML = `
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full ${bulletColor} ring-4 ring-slate-50 dark:ring-dark-bg group-hover:scale-125 transition-transform"></div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">${proj.title}</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm mt-1 leading-relaxed">${proj.description}</p>
+                `;
+                currentContainer.appendChild(item);
+            });
+        }
+
+        // Event listener do botão de idioma
+        document.getElementById('langToggleBtn').addEventListener('click', () => {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            document.getElementById('langLabel').innerText = currentLang.toUpperCase();
+            renderPage();
+        });
+
+        // Event listener do tema Dark/Light
+        document.getElementById('themeToggleBtn').addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        });
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', fetchPortfolioData);
+    </script>
 </body>
 </html>
